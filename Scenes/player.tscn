@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7rnic5tc7qma"]
+
+[ext_resource type="Texture2D" uid="uid://c20kqm8v33ln3" path="res://PNG/playerShip1_blue.png" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://ca5ul7ho5seei" path="res://Scenes/player.gd" id="1_cvnsp"]
+
+[node name="player" type="CharacterBody2D"]
+collision_mask = 6
+script = ExtResource("1_cvnsp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4flbx")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-9, -37, 8, -37, 11, -12, 35, 2, 42, 0, 45, -6, 49, -6, 45, 24, 41, 19, 35, 23, 13, 27, 7, 38, -7, 38, -14, 27, -36, 24, -41, 21, -46, 25, -50, -6, -45, -6, -41, -1, -36, 2, -12, -11)
+
+[node name="laserMarker" type="Marker2D" parent="."]
+position = Vector2(0, -53)
+
+[node name="laserTimer" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+
+[connection signal="timeout" from="laserTimer" to="." method="_on_laser_timer_timeout"]
