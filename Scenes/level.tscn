@@ -1,7 +1,23 @@
-[gd_scene load_steps=7 format=3 uid="uid://cx7pgitshp4ed"]
+[gd_scene load_steps=10 format=3 uid="uid://cx7pgitshp4ed"]
 
 [ext_resource type="Script" uid="uid://c4y6lt3ay7vx4" path="res://Scenes/level.gd" id="1_k5f4k"]
 [ext_resource type="PackedScene" uid="uid://c7rnic5tc7qma" path="res://Scenes/player.tscn" id="1_vonw3"]
+[ext_resource type="Texture2D" uid="uid://btrh1ow7hr8co" path="res://PNG/Effects/star1.png" id="3_81xng"]
+[ext_resource type="Texture2D" uid="uid://d4mew00gsobxd" path="res://PNG/Effects/star2.png" id="4_wqkje"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0f350"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_81xng")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wqkje")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k5f4k"]
 size = Vector2(1280, 100)
@@ -20,6 +36,15 @@ script = ExtResource("1_k5f4k")
 
 [node name="player" parent="." instance=ExtResource("1_vonw3")]
 position = Vector2(836, 502)
+
+[node name="Stars" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Stars"]
+position = Vector2(210, 148)
+sprite_frames = SubResource("SpriteFrames_0f350")
+autoplay = "default"
+frame = 1
+frame_progress = 0.11018411
 
 [node name="Meteors" type="Node2D" parent="."]
 
