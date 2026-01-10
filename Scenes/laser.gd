@@ -4,9 +4,9 @@ extends Area2D
 
 func _ready():
 	
-	$Sprite2D.scale = Vector2(0,0)
+	
 	var tween = create_tween()
-	tween.tween_property($Sprite2D, "scale", Vector2(1,1), 0.1)
+	tween.tween_property($Sprite2D, "scale", Vector2(1,1), 0.2).from(Vector2(0,0))
 	
 	#timer to despawn
 	get_tree().create_timer(10.0).timeout.connect(queue_free)
