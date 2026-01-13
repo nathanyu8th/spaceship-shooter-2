@@ -194,8 +194,29 @@ offset_top = -85.0
 offset_right = 122.0
 offset_bottom = -10.0
 grow_vertical = 0
+theme_override_constants/separation = 3
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_wqkje")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_wqkje")
+stretch_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_wqkje")
+stretch_mode = 2
+
+[node name="TextureRect4" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_wqkje")
+stretch_mode = 2
+
+[node name="TextureRect5" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("5_wqkje")
 stretch_mode = 2
