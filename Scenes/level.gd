@@ -31,7 +31,7 @@ func _on_meteor_timer_timeout() -> void:
 	
 func _on_meteor_collision():
 	health -= 1
-	print(health)
+	get_tree().call_group('UI', 'set_health', health)
 	if health <= 0:
 		get_tree().call_deferred("reload_current_scene")
 
