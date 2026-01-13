@@ -4,7 +4,7 @@ extends Area2D
 @export var rotationSpeed: int = 300
 @export var directionX: float = 300
 
-
+signal collision
 
 func _ready():
 	var rng := RandomNumberGenerator.new()
@@ -57,4 +57,6 @@ func _process(delta):
 
 func _on_body_entered(body: Node2D) -> void:
 	#Collide with player to reset the scene
-	get_tree().call_deferred("reload_current_scene")
+	#get_tree().call_deferred("reload_current_scene")
+	
+	collision.emit()

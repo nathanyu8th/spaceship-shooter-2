@@ -24,6 +24,12 @@ func _on_meteor_timer_timeout() -> void:
 	var meteor = meteor_scene.instantiate()
 	
 	$Meteors.add_child(meteor)
+	
+	#connect signal from meteor script
+	meteor.connect('collision', on_meteor_collision)
+	
+func on_meteor_collision():
+	print('Meteor Collision in Level')
 
 
 func _on_player_laser(pos: Variant) -> void:	

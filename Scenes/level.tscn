@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c7rnic5tc7qma" path="res://Scenes/player.tscn" id="1_vonw3"]
 [ext_resource type="Texture2D" uid="uid://btrh1ow7hr8co" path="res://PNG/Effects/star1.png" id="3_81xng"]
 [ext_resource type="Texture2D" uid="uid://d4mew00gsobxd" path="res://PNG/Effects/star2.png" id="4_wqkje"]
-[ext_resource type="Texture2D" uid="uid://cnawpqor5hpfq" path="res://PNG/playerShip2_red.png" id="5_wqkje"]
+[ext_resource type="PackedScene" uid="uid://bktpkui3qj84o" path="res://Scenes/ui.tscn" id="5_wqkje"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0f350"]
 animations = [{
@@ -183,46 +183,7 @@ collision_layer = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/LeftBorder"]
 shape = SubResource("RectangleShape2D_wqkje")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -75.0
-offset_right = 572.0
-grow_vertical = 0
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 3
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MarginContainer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("5_wqkje")
-stretch_mode = 2
-
-[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/MarginContainer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("5_wqkje")
-stretch_mode = 2
-
-[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/MarginContainer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("5_wqkje")
-stretch_mode = 2
-
-[node name="TextureRect4" type="TextureRect" parent="CanvasLayer/MarginContainer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("5_wqkje")
-stretch_mode = 2
-
-[node name="TextureRect5" type="TextureRect" parent="CanvasLayer/MarginContainer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("5_wqkje")
-stretch_mode = 2
+[node name="UI" parent="." instance=ExtResource("5_wqkje")]
 
 [connection signal="laser" from="player" to="." method="_on_player_laser"]
 [connection signal="timeout" from="Timer" to="." method="_on_meteor_timer_timeout"]
