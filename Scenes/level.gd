@@ -20,6 +20,9 @@ func _ready():
 		
 		#speed
 		star.speed_scale = rng.randf_range(0.6,1.4)
+		
+	#health initialization
+	get_tree().call_group('UI', 'set_health', health)
 	
 func _on_meteor_timer_timeout() -> void:
 	var meteor = meteor_scene.instantiate()
