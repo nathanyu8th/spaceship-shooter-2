@@ -2,6 +2,7 @@ extends Node2D
 
 var meteor_scene: PackedScene = load("res://Scenes/meteor.tscn")
 var laser_scene: PackedScene = load("res://Scenes/laser.tscn")
+var health: int = 3
 
 func _ready():
 	#stars
@@ -26,10 +27,13 @@ func _on_meteor_timer_timeout() -> void:
 	$Meteors.add_child(meteor)
 	
 	#connect signal from meteor script
-	meteor.connect('collision', on_meteor_collision)
+	meteor.connect('collision', _on_meteor_collision)
 	
-func on_meteor_collision():
-	print('Meteor Collision in Level')
+func _on_meteor_collision():
+	health -= 1
+	print(health)
+	if health <= 0:
+		get_tree().call_deferred("reload_current_scene")
 
 
 func _on_player_laser(pos: Variant) -> void:	
