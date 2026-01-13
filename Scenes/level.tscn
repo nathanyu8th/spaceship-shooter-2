@@ -185,38 +185,41 @@ shape = SubResource("RectangleShape2D_wqkje")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 10.0
-offset_top = -85.0
-offset_right = 122.0
-offset_bottom = -10.0
+offset_top = -75.0
+offset_right = 572.0
 grow_vertical = 0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
 theme_override_constants/separation = 3
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("5_wqkje")
 stretch_mode = 2
 
-[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("5_wqkje")
 stretch_mode = 2
 
-[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("5_wqkje")
 stretch_mode = 2
 
-[node name="TextureRect4" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
+[node name="TextureRect4" type="TextureRect" parent="CanvasLayer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("5_wqkje")
 stretch_mode = 2
 
-[node name="TextureRect5" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
+[node name="TextureRect5" type="TextureRect" parent="CanvasLayer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("5_wqkje")
 stretch_mode = 2
