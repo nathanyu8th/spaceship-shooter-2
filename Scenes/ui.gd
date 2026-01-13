@@ -12,4 +12,5 @@ func set_health(amount):
 	for i in amount:
 		var text_rect = TextureRect.new()
 		text_rect.texture = image
-		$MarginContainer/HBoxContainer.add(text_rect)
+		$MarginContainer/HBoxContainer.add_child(text_rect)
+		text_rect.stretch_mode = TextureRect.STRETCH_KEEP
