@@ -9,11 +9,12 @@ signal high_score_changed(high_score)
 func add_points(amount: int):
 	score += amount
 	score_changed.emit(score)
-	if high_score < score:
-		high_score = score
-		high_score_changed.emit(high_score)
+	
 	
 	
 func reset():
+	if high_score < score:
+		high_score = score
+		high_score_changed.emit(high_score)
 	score = 0
 	score_changed.emit(score)
