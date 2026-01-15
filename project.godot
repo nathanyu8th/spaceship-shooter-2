@@ -15,6 +15,10 @@ run/main_scene="uid://cx7pgitshp4ed"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+ScoreLayer="*res://Scenes/score_layer.gd"
+
 [display]
 
 window/size/viewport_width=1280

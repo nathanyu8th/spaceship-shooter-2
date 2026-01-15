@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cx7pgitshp4ed"]
+[gd_scene load_steps=14 format=3 uid="uid://cx7pgitshp4ed"]
 
 [ext_resource type="Script" uid="uid://c4y6lt3ay7vx4" path="res://Scenes/level.gd" id="1_k5f4k"]
 [ext_resource type="PackedScene" uid="uid://c7rnic5tc7qma" path="res://Scenes/player.tscn" id="1_vonw3"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://d4mew00gsobxd" path="res://PNG/Effects/star2.png" id="4_wqkje"]
 [ext_resource type="PackedScene" uid="uid://bktpkui3qj84o" path="res://Scenes/ui.tscn" id="5_wqkje"]
 [ext_resource type="Script" uid="uid://blcblxx5lxhlj" path="res://Scenes/score_layer.gd" id="6_0f350"]
+[ext_resource type="Script" uid="uid://d31lwslsgqiv4" path="res://Scenes/score.gd" id="7_8c0lf"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0f350"]
 animations = [{
@@ -198,10 +199,11 @@ offset_bottom = 77.0
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 
-[node name="Label" type="Label" parent="ScoreLayer/CurrentScore"]
+[node name="score" type="Label" parent="ScoreLayer/CurrentScore"]
 layout_mode = 2
 text = "Score: 0"
 label_settings = SubResource("LabelSettings_wqkje")
+script = ExtResource("7_8c0lf")
 
 [node name="HighScore" type="MarginContainer" parent="ScoreLayer"]
 anchors_preset = 1
@@ -213,7 +215,7 @@ grow_horizontal = 0
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 
-[node name="Label" type="Label" parent="ScoreLayer/HighScore"]
+[node name="Hscore" type="Label" parent="ScoreLayer/HighScore"]
 layout_mode = 2
 text = "High Score: 0"
 label_settings = SubResource("LabelSettings_wqkje")

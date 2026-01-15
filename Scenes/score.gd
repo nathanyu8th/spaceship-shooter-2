@@ -3,9 +3,9 @@ extends Label
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	text = "Score: 0"
+	ScoreLayer.score_changed.connect(_on_score_changed)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_score_changed(new_score: int):
+	text = "Score: %d" % new_score

@@ -18,5 +18,6 @@ func _process(delta: float) -> void:
 
 func _on_area_entered(area: Area2D) -> void:
 	#destroy meteor and laser when colliding with meteor
+	ScoreLayer.add_points(10)
 	area.call_deferred("queue_free")
 	call_deferred("queue_free")
