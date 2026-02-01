@@ -3,6 +3,12 @@ extends Area2D
 @export var speed: int= 500
 
 func _ready():
+	#tweening animation
+	$Sprite2D.scale = Vector2(0,0)
+	var tween = create_tween()
+	tween.tween_property($Sprite2D, "scale", Vector2(1,1), 0.5)
+	
+	#timer to despawn
 	get_tree().create_timer(10.0).timeout.connect(queue_free)
 	
 func _process(delta: float) -> void:
