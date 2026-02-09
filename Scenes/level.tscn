@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c7rnic5tc7qma" path="res://Scenes/player.tscn" id="1_vonw3"]
 [ext_resource type="Texture2D" uid="uid://btrh1ow7hr8co" path="res://PNG/Effects/star1.png" id="3_81xng"]
 [ext_resource type="Texture2D" uid="uid://d4mew00gsobxd" path="res://PNG/Effects/star2.png" id="4_wqkje"]
-[ext_resource type="Texture2D" uid="uid://cnawpqor5hpfq" path="res://PNG/playerShip2_red.png" id="5_wqkje"]
+[ext_resource type="PackedScene" uid="uid://n1cpcqs12p3r" path="res://Scenes/ui.tscn" id="5_wqkje"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k5f4k"]
 size = Vector2(1280, 100)
@@ -142,36 +142,7 @@ autoplay = "default"
 sprite_frames = SubResource("SpriteFrames_81xng")
 autoplay = "default"
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -75.0
-offset_right = 112.0
-grow_vertical = 0
-theme_override_constants/separation = 3
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("5_wqkje")
-
-[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("5_wqkje")
-
-[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("5_wqkje")
-
-[node name="TextureRect4" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("5_wqkje")
-
-[node name="TextureRect5" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("5_wqkje")
+[node name="UI" parent="." instance=ExtResource("5_wqkje")]
 
 [connection signal="laser" from="player" to="." method="_on_player_laser"]
 [connection signal="timeout" from="Timer" to="." method="_on_meteor_timer_timeout"]
