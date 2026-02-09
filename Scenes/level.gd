@@ -36,6 +36,7 @@ func _on_meteor_collision():
 	health -= 1
 	get_tree().call_group('UI', 'set_health', health)
 	if health <= 0:
+		ScoreLayer.reset()
 		get_tree().call_deferred("reload_current_scene")
 
 
