@@ -144,5 +144,29 @@ autoplay = "default"
 
 [node name="UI" parent="." instance=ExtResource("5_wqkje")]
 
+[node name="ScoreLayer" type="CanvasLayer" parent="."]
+
+[node name="CurrentScore" type="MarginContainer" parent="ScoreLayer"]
+offset_right = 61.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="ScoreLayer/CurrentScore"]
+layout_mode = 2
+text = "Score: 0"
+
+[node name="HighScore" type="MarginContainer" parent="ScoreLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+
+[node name="Label" type="Label" parent="ScoreLayer/HighScore"]
+layout_mode = 2
+text = "High Score: 0"
+
 [connection signal="laser" from="player" to="." method="_on_player_laser"]
 [connection signal="timeout" from="Timer" to="." method="_on_meteor_timer_timeout"]
