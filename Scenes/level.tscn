@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cx7pgitshp4ed"]
+[gd_scene load_steps=15 format=3 uid="uid://cx7pgitshp4ed"]
 
 [ext_resource type="Script" uid="uid://c4y6lt3ay7vx4" path="res://Scenes/level.gd" id="1_k5f4k"]
 [ext_resource type="PackedScene" uid="uid://c7rnic5tc7qma" path="res://Scenes/player.tscn" id="1_vonw3"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://d4mew00gsobxd" path="res://PNG/Effects/star2.png" id="4_wqkje"]
 [ext_resource type="PackedScene" uid="uid://n1cpcqs12p3r" path="res://Scenes/ui.tscn" id="5_wqkje"]
 [ext_resource type="Script" uid="uid://b7o70wbprcmsw" path="res://Scenes/score.gd" id="6_0f350"]
+[ext_resource type="Script" uid="uid://bpf2t72itqm07" path="res://Scenes/hscore.gd" id="7_8c0lf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k5f4k"]
 size = Vector2(1280, 100)
@@ -158,14 +159,14 @@ offset_right = 61.0
 offset_bottom = 40.0
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
-script = ExtResource("6_0f350")
 
 [node name="Label" type="Label" parent="ScoreLayer/CurrentScore"]
 layout_mode = 2
 text = "Score: 0"
 label_settings = SubResource("LabelSettings_wqkje")
+script = ExtResource("6_0f350")
 
-[node name="HighScore" type="MarginContainer" parent="ScoreLayer"]
+[node name="HScore" type="MarginContainer" parent="ScoreLayer"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -175,10 +176,11 @@ grow_horizontal = 0
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 
-[node name="Label" type="Label" parent="ScoreLayer/HighScore"]
+[node name="Label" type="Label" parent="ScoreLayer/HScore"]
 layout_mode = 2
 text = "High Score: 0"
 label_settings = SubResource("LabelSettings_0f350")
+script = ExtResource("7_8c0lf")
 
 [connection signal="laser" from="player" to="." method="_on_player_laser"]
 [connection signal="timeout" from="Timer" to="." method="_on_meteor_timer_timeout"]
